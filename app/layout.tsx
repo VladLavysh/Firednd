@@ -1,7 +1,11 @@
+import Navbar from "./components/navbar/Navbar"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Nunito } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] })
+// Font: Nunito
+const globalFont = Nunito({
+  subsets: ["latin"],
+})
 
 export const metadata = {
   title: "Firebnb",
@@ -15,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={globalFont.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
